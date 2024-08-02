@@ -1,0 +1,367 @@
+@prefix : <http://www.semanticweb.org/mdebe/ontologies/2024/7/util/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/mdebe/ontologies/2024/7/util/> .
+
+<http://www.semanticweb.org/mdebe/ontologies/2024/7/util> rdf:type owl:Ontology .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/terms/contributor
+<http://purl.org/dc/terms/contributor> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/created
+<http://purl.org/dc/terms/created> rdf:type owl:AnnotationProperty .
+
+
+###  http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled
+<http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/mdebe/ontologies/2024/7/util/hasCause
+:hasCause rdf:type owl:ObjectProperty ;
+          <http://purl.org/dc/terms/contributor> <https://orcid.org/0000-0002-8824-9577> ;
+          <http://purl.org/dc/terms/created> "2024-08-02T18:36:15Z"^^xsd:dateTime .
+
+
+###  http://www.semanticweb.org/mdebe/ontologies/2024/7/util/hasGreaterProbabilityThan
+:hasGreaterProbabilityThan rdf:type owl:ObjectProperty ;
+                           owl:inverseOf :hasLesserProbabilityThan ;
+                           rdf:type owl:TransitiveProperty ;
+                           <http://purl.org/dc/terms/contributor> <https://orcid.org/0000-0002-8824-9577> ;
+                           <http://purl.org/dc/terms/created> "2024-08-02T18:23:57Z"^^xsd:dateTime .
+
+
+###  http://www.semanticweb.org/mdebe/ontologies/2024/7/util/hasLesserProbabilityThan
+:hasLesserProbabilityThan rdf:type owl:ObjectProperty ,
+                                   owl:TransitiveProperty ;
+                          <http://purl.org/dc/terms/contributor> <https://orcid.org/0000-0002-8824-9577> ;
+                          <http://purl.org/dc/terms/created> "2024-08-02T18:24:13Z"^^xsd:dateTime .
+
+
+###  http://www.semanticweb.org/mdebe/ontologies/2024/7/util/hasPostCondition
+:hasPostCondition rdf:type owl:ObjectProperty ;
+                  rdfs:domain :Event ;
+                  rdfs:range :State ;
+                  <http://purl.org/dc/terms/contributor> <https://orcid.org/0000-0002-8824-9577> ;
+                  <http://purl.org/dc/terms/created> "2024-08-02T18:43:27Z"^^xsd:dateTime .
+
+
+###  http://www.semanticweb.org/mdebe/ontologies/2024/7/util/hasPreCondition
+:hasPreCondition rdf:type owl:ObjectProperty ;
+                 rdfs:domain :Event ;
+                 rdfs:range :State ;
+                 <http://purl.org/dc/terms/contributor> <https://orcid.org/0000-0002-8824-9577> ;
+                 <http://purl.org/dc/terms/created> "2024-08-02T18:43:27Z"^^xsd:dateTime .
+
+
+###  http://www.semanticweb.org/mdebe/ontologies/2024/7/util/hasSubProposition
+:hasSubProposition rdf:type owl:ObjectProperty ;
+                   owl:inverseOf :isSubPropositionOf ;
+                   rdfs:domain :Proposition ;
+                   rdfs:range :Proposition ;
+                   <http://purl.org/dc/terms/contributor> <https://orcid.org/0000-0002-8824-9577> ;
+                   <http://purl.org/dc/terms/created> "2024-08-02T18:11:25Z"^^xsd:dateTime .
+
+
+###  http://www.semanticweb.org/mdebe/ontologies/2024/7/util/isSubPropositionOf
+:isSubPropositionOf rdf:type owl:ObjectProperty ;
+                    <http://purl.org/dc/terms/contributor> <https://orcid.org/0000-0002-8824-9577> ;
+                    <http://purl.org/dc/terms/created> "2024-08-02T18:11:34Z"^^xsd:dateTime .
+
+
+###  http://www.semanticweb.org/mdebe/ontologies/2024/7/util/preferredState
+:preferredState rdf:type owl:ObjectProperty ;
+                <http://purl.org/dc/terms/contributor> <https://orcid.org/0000-0002-8824-9577> ;
+                <http://purl.org/dc/terms/created> "2024-08-02T18:53:03Z"^^xsd:dateTime .
+
+
+###  http://www.semanticweb.org/mdebe/ontologies/2024/7/util/rationalDecision
+:rationalDecision rdf:type owl:ObjectProperty ;
+                  rdfs:domain :Choice ;
+                  rdfs:range :Task ;
+                  <http://purl.org/dc/terms/contributor> <https://orcid.org/0000-0002-8824-9577> ;
+                  <http://purl.org/dc/terms/created> "2024-08-02T18:50:10Z"^^xsd:dateTime .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.semanticweb.org/mdebe/ontologies/2024/7/util/baseUtility
+:baseUtility rdf:type owl:DatatypeProperty ,
+                      owl:FunctionalProperty ;
+             rdfs:range xsd:decimal ;
+             <http://purl.org/dc/terms/contributor> <https://orcid.org/0000-0002-8824-9577> ;
+             <http://purl.org/dc/terms/created> "2024-08-02T18:12:56Z"^^xsd:dateTime .
+
+
+###  http://www.semanticweb.org/mdebe/ontologies/2024/7/util/expectedValue
+:expectedValue rdf:type owl:DatatypeProperty ;
+               rdfs:range xsd:decimal ;
+               <http://purl.org/dc/terms/contributor> <https://orcid.org/0000-0002-8824-9577> ;
+               <http://purl.org/dc/terms/created> "2024-08-02T18:55:49Z"^^xsd:dateTime .
+
+
+###  http://www.semanticweb.org/mdebe/ontologies/2024/7/util/probability
+:probability rdf:type owl:DatatypeProperty ,
+                      owl:FunctionalProperty ;
+             rdfs:range xsd:decimal ;
+             <http://purl.org/dc/terms/contributor> <https://orcid.org/0000-0002-8824-9577> ;
+             <http://purl.org/dc/terms/created> "2024-08-02T18:12:56Z"^^xsd:dateTime .
+
+
+###  http://www.semanticweb.org/mdebe/ontologies/2024/7/util/utility
+:utility rdf:type owl:DatatypeProperty ;
+         rdfs:range xsd:decimal ;
+         <http://purl.org/dc/terms/contributor> <https://orcid.org/0000-0002-8824-9577> ;
+         <http://purl.org/dc/terms/created> "2024-08-02T18:30:04Z"^^xsd:dateTime .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/mdebe/ontologies/2024/7/util/Agent
+:Agent rdf:type owl:Class ;
+       <http://purl.org/dc/terms/contributor> <https://orcid.org/0000-0002-8824-9577> ;
+       <http://purl.org/dc/terms/created> "2024-08-02T18:09:29Z"^^xsd:dateTime .
+
+
+###  http://www.semanticweb.org/mdebe/ontologies/2024/7/util/Choice
+:Choice rdf:type owl:Class ;
+        rdfs:subClassOf :Task ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasSubProposition ;
+                          owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+                          owl:onClass :Task
+                        ] ;
+        <http://purl.org/dc/terms/contributor> <https://orcid.org/0000-0002-8824-9577> ;
+        <http://purl.org/dc/terms/created> "2024-08-02T18:42:39Z"^^xsd:dateTime .
+
+
+###  http://www.semanticweb.org/mdebe/ontologies/2024/7/util/Event
+:Event rdf:type owl:Class ;
+       rdfs:subClassOf :Proposition ;
+       <http://purl.org/dc/terms/contributor> <https://orcid.org/0000-0002-8824-9577> ;
+       <http://purl.org/dc/terms/created> "2024-08-02T18:35:42Z"^^xsd:dateTime .
+
+
+###  http://www.semanticweb.org/mdebe/ontologies/2024/7/util/OrState
+:OrState rdf:type owl:Class ;
+         owl:equivalentClass [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasSubProposition ;
+                               owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                               owl:onClass :State
+                             ] ;
+         rdfs:subClassOf :State ;
+         <http://purl.org/dc/terms/contributor> <https://orcid.org/0000-0002-8824-9577> ;
+         <http://purl.org/dc/terms/created> "2024-08-02T18:10:03Z"^^xsd:dateTime ;
+         rdfs:comment "A state where only one of the sub-states will be the actual result. Each sub-state must have a probability and the probabilities must sum to 1." .
+
+
+###  http://www.semanticweb.org/mdebe/ontologies/2024/7/util/Proposition
+:Proposition rdf:type owl:Class ;
+             <http://purl.org/dc/terms/contributor> <https://orcid.org/0000-0002-8824-9577> ;
+             <http://purl.org/dc/terms/created> "2024-08-02T18:37:03Z"^^xsd:dateTime .
+
+
+###  http://www.semanticweb.org/mdebe/ontologies/2024/7/util/State
+:State rdf:type owl:Class ;
+       rdfs:subClassOf :Proposition ;
+       <http://purl.org/dc/terms/contributor> <https://orcid.org/0000-0002-8824-9577> ;
+       <http://purl.org/dc/terms/created> "2024-08-02T18:09:49Z"^^xsd:dateTime .
+
+
+###  http://www.semanticweb.org/mdebe/ontologies/2024/7/util/Task
+:Task rdf:type owl:Class ;
+      owl:equivalentClass [ owl:intersectionOf ( :Event
+                                                 [ rdf:type owl:Restriction ;
+                                                   owl:onProperty :hasCause ;
+                                                   owl:someValuesFrom :Agent
+                                                 ]
+                                               ) ;
+                            rdf:type owl:Class
+                          ] ;
+      rdfs:subClassOf :Event ;
+      <http://purl.org/dc/terms/contributor> <https://orcid.org/0000-0002-8824-9577> ;
+      <http://purl.org/dc/terms/created> "2024-08-02T18:35:57Z"^^xsd:dateTime .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.semanticweb.org/mdebe/ontologies/2024/7/util/DontSpinSlotMachine
+:DontSpinSlotMachine rdf:type owl:NamedIndividual ,
+                              :Task ;
+                     :baseUtility 0 ;
+                     :probability 1 ;
+                     <http://purl.org/dc/terms/contributor> <https://orcid.org/0000-0002-8824-9577> ;
+                     <http://purl.org/dc/terms/created> "2024-08-02T18:47:48Z"^^xsd:dateTime .
+
+
+###  http://www.semanticweb.org/mdebe/ontologies/2024/7/util/SlotMachinePaysOff
+:SlotMachinePaysOff rdf:type owl:NamedIndividual ,
+                             :State ;
+                    :baseUtility 1000 ;
+                    :probability .0001 ;
+                    <http://purl.org/dc/terms/contributor> <https://orcid.org/0000-0002-8824-9577> ;
+                    <http://purl.org/dc/terms/created> "2024-08-02T18:15:43Z"^^xsd:dateTime .
+
+
+###  http://www.semanticweb.org/mdebe/ontologies/2024/7/util/SlotMachineResult
+:SlotMachineResult rdf:type owl:NamedIndividual ,
+                            :OrState ;
+                   :hasSubProposition :SlotMachinePaysOff ,
+                                      :SlotMachineReturnsNothing ;
+                   <http://purl.org/dc/terms/contributor> <https://orcid.org/0000-0002-8824-9577> ;
+                   <http://purl.org/dc/terms/created> "2024-08-02T18:48:26Z"^^xsd:dateTime .
+
+
+###  http://www.semanticweb.org/mdebe/ontologies/2024/7/util/SlotMachineReturnsNothing
+:SlotMachineReturnsNothing rdf:type owl:NamedIndividual ,
+                                    :State ;
+                           :baseUtility -25.0 ;
+                           :probability .9999 ;
+                           <http://purl.org/dc/terms/contributor> <https://orcid.org/0000-0002-8824-9577> ;
+                           <http://purl.org/dc/terms/created> "2024-08-02T18:15:54Z"^^xsd:dateTime .
+
+
+###  http://www.semanticweb.org/mdebe/ontologies/2024/7/util/SpinSlotMachine
+:SpinSlotMachine rdf:type owl:NamedIndividual ,
+                          :Task ;
+                 :hasPostCondition :SlotMachineResult ;
+                 <http://purl.org/dc/terms/contributor> <https://orcid.org/0000-0002-8824-9577> ;
+                 <http://purl.org/dc/terms/created> "2024-08-02T18:47:36Z"^^xsd:dateTime .
+
+
+###  http://www.semanticweb.org/mdebe/ontologies/2024/7/util/SpinSlotMachineChoice
+:SpinSlotMachineChoice rdf:type owl:NamedIndividual ,
+                                :Choice ;
+                       :hasSubProposition :DontSpinSlotMachine ,
+                                          :SpinSlotMachine ;
+                       <http://purl.org/dc/terms/contributor> <https://orcid.org/0000-0002-8824-9577> ;
+                       <http://purl.org/dc/terms/created> "2024-08-02T18:46:09Z"^^xsd:dateTime .
+
+
+#################################################################
+#    Rules
+#################################################################
+
+:p1 rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+:p2 rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+:s rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+:s1 rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+:s2 rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+:p rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+:bu rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+:u rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment "Multiplies the baseUtility times the probability" ;
+   rdfs:label "Compute Gintis Utility" ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> :probability ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> :s ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> :p
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> :baseUtility ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> :s ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> :bu
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#BuiltinAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#builtin> <http://www.w3.org/2003/11/swrlb#multiply> ;
+                                                                             <http://www.w3.org/2003/11/swrl#arguments> ( :u
+                                                                                                                          :p
+                                                                                                                          :bu
+                                                                                                                        )
+                                                                           ] ;
+                                                                 rdf:rest rdf:nil
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> :utility ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> :s ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> :u
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment "" ;
+   rdfs:label "Compute Probability Order" ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#BuiltinAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#builtin> <http://www.w3.org/2003/11/swrlb#greaterThan> ;
+                                                       <http://www.w3.org/2003/11/swrl#arguments> ( :p1
+                                                                                                    :p2
+                                                                                                  )
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> :hasSubProposition ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> :s ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> :s1
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#propertyPredicate> :hasSubProposition ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument1> :s ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument2> :s2
+                                                                           ] ;
+                                                                 rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                            rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> ;
+                                                                                        <http://www.w3.org/2003/11/swrl#propertyPredicate> :probability ;
+                                                                                        <http://www.w3.org/2003/11/swrl#argument1> :s1 ;
+                                                                                        <http://www.w3.org/2003/11/swrl#argument2> :p1
+                                                                                      ] ;
+                                                                            rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                                       rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> ;
+                                                                                                   <http://www.w3.org/2003/11/swrl#propertyPredicate> :probability ;
+                                                                                                   <http://www.w3.org/2003/11/swrl#argument1> :s2 ;
+                                                                                                   <http://www.w3.org/2003/11/swrl#argument2> :p2
+                                                                                                 ] ;
+                                                                                       rdf:rest rdf:nil
+                                                                                     ]
+                                                                          ]
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> :hasGreaterProbabilityThan ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> :s1 ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> :s2
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi
