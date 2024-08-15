@@ -68,6 +68,7 @@
 
 ###  http://www.semanticweb.org/mdebe/ontologies/2024/7/util/hasGameTree
 :hasGameTree rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf :hasSubEvent ;
              rdfs:domain :Game ;
              rdfs:range :GameTree ;
              <http://purl.org/dc/terms/contributor> <https://orcid.org/0000-0002-8824-9577> ;
@@ -80,22 +81,6 @@
                            rdf:type owl:TransitiveProperty ;
                            <http://purl.org/dc/terms/contributor> <https://orcid.org/0000-0002-8824-9577> ;
                            <http://purl.org/dc/terms/created> "2024-08-02T18:23:57Z"^^xsd:dateTime .
-
-
-###  http://www.semanticweb.org/mdebe/ontologies/2024/7/util/hasInformationSet
-:hasInformationSet rdf:type owl:ObjectProperty ;
-                   rdfs:domain :Game ;
-                   rdfs:range :InformationSet ;
-                   <http://purl.org/dc/terms/contributor> <https://orcid.org/0000-0002-8824-9577> ;
-                   <http://purl.org/dc/terms/created> "2024-08-14T23:47:00Z"^^xsd:dateTime .
-
-
-###  http://www.semanticweb.org/mdebe/ontologies/2024/7/util/hasLastNode
-:hasLastNode rdf:type owl:ObjectProperty ;
-             rdfs:subPropertyOf :hasTreeNode ;
-             owl:inverseOf :isLastNodeFor ;
-             <http://purl.org/dc/terms/contributor> <https://orcid.org/0000-0002-8824-9577> ;
-             <http://purl.org/dc/terms/created> "2024-08-14T23:28:22Z"^^xsd:dateTime .
 
 
 ###  http://www.semanticweb.org/mdebe/ontologies/2024/7/util/hasLesserProbabilityThan
@@ -142,12 +127,9 @@
 
 ###  http://www.semanticweb.org/mdebe/ontologies/2024/7/util/hasPlayer
 :hasPlayer rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf :responsibleAgent ;
            owl:inverseOf :isPlayerOf ;
-           rdfs:domain [ rdf:type owl:Class ;
-                         owl:unionOf ( :Game
-                                       :GameTreeNode
-                                     )
-                       ] ;
+           rdfs:domain :Game ;
            rdfs:range :Player ;
            <http://purl.org/dc/terms/contributor> <https://orcid.org/0000-0002-8824-9577> ;
            <http://purl.org/dc/terms/created> "2024-08-08T22:59:43Z"^^xsd:dateTime .
@@ -172,16 +154,15 @@
 
 ###  http://www.semanticweb.org/mdebe/ontologies/2024/7/util/hasPreviousStrategy
 :hasPreviousStrategy rdf:type owl:ObjectProperty ;
-                     rdfs:domain :Strategy ;
-                     rdfs:range :Strategy ;
                      <http://purl.org/dc/terms/contributor> <https://orcid.org/0000-0002-8824-9577> ;
                      <http://purl.org/dc/terms/created> "2024-08-12T22:42:13Z"^^xsd:dateTime .
 
 
 ###  http://www.semanticweb.org/mdebe/ontologies/2024/7/util/hasRootNode
 :hasRootNode rdf:type owl:ObjectProperty ;
-             rdfs:subPropertyOf :hasTreeNode ;
-             owl:inverseOf :isRootNodeFor ;
+             rdfs:subPropertyOf :hasSubEvent ;
+             rdfs:domain :GameTree ;
+             rdfs:range :Event ;
              <http://purl.org/dc/terms/contributor> <https://orcid.org/0000-0002-8824-9577> ;
              <http://purl.org/dc/terms/created> "2024-08-13T18:05:11Z"^^xsd:dateTime .
 
@@ -213,15 +194,6 @@
              <http://purl.org/dc/terms/created> "2024-08-05T23:35:39Z"^^xsd:dateTime .
 
 
-###  http://www.semanticweb.org/mdebe/ontologies/2024/7/util/hasSubNode
-:hasSubNode rdf:type owl:ObjectProperty ;
-            owl:inverseOf :hasSuperNode ;
-            rdfs:domain :GameTreeNode ;
-            rdfs:range :GameTreeNode ;
-            <http://purl.org/dc/terms/contributor> <https://orcid.org/0000-0002-8824-9577> ;
-            <http://purl.org/dc/terms/created> "2024-08-14T21:43:49Z"^^xsd:dateTime .
-
-
 ###  http://www.semanticweb.org/mdebe/ontologies/2024/7/util/hasSubProposition
 :hasSubProposition rdf:type owl:ObjectProperty ;
                    owl:inverseOf :isSubPropositionOf ;
@@ -234,53 +206,28 @@
 ###  http://www.semanticweb.org/mdebe/ontologies/2024/7/util/hasSubState
 :hasSubState rdf:type owl:ObjectProperty ;
              rdfs:subPropertyOf :hasSubProposition ;
-             owl:inverseOf :isSubStateOf ;
              rdfs:domain :State ;
              rdfs:range :State ;
              <http://purl.org/dc/terms/contributor> <https://orcid.org/0000-0002-8824-9577> ;
              <http://purl.org/dc/terms/created> "2024-08-05T23:36:01Z"^^xsd:dateTime .
 
 
-###  http://www.semanticweb.org/mdebe/ontologies/2024/7/util/hasSuperNode
-:hasSuperNode rdf:type owl:ObjectProperty ;
-              <http://purl.org/dc/terms/contributor> <https://orcid.org/0000-0002-8824-9577> ;
-              <http://purl.org/dc/terms/created> "2024-08-14T21:43:57Z"^^xsd:dateTime .
-
-
 ###  http://www.semanticweb.org/mdebe/ontologies/2024/7/util/hasTreeNode
 :hasTreeNode rdf:type owl:ObjectProperty ;
-             owl:inverseOf :isNodeFor ;
+             rdfs:subPropertyOf :hasSubEvent ;
              rdfs:domain :GameTree ;
-             rdfs:range :GameTreeNode ;
              <http://purl.org/dc/terms/contributor> <https://orcid.org/0000-0002-8824-9577> ;
              <http://purl.org/dc/terms/created> "2024-08-13T18:08:32Z"^^xsd:dateTime .
 
 
 ###  http://www.semanticweb.org/mdebe/ontologies/2024/7/util/isCauseOf
 :isCauseOf rdf:type owl:ObjectProperty ;
-           rdfs:domain :CausalObject ;
-           rdfs:range :Proposition ;
            <http://purl.org/dc/terms/contributor> <https://orcid.org/0000-0002-8824-9577> ;
            <http://purl.org/dc/terms/created> "2024-08-02T21:34:33Z"^^xsd:dateTime .
 
 
-###  http://www.semanticweb.org/mdebe/ontologies/2024/7/util/isLastNodeFor
-:isLastNodeFor rdf:type owl:ObjectProperty ;
-               rdfs:subPropertyOf :isNodeFor ;
-               <http://purl.org/dc/terms/contributor> <https://orcid.org/0000-0002-8824-9577> ;
-               <http://purl.org/dc/terms/created> "2024-08-14T23:29:22Z"^^xsd:dateTime .
-
-
-###  http://www.semanticweb.org/mdebe/ontologies/2024/7/util/isNodeFor
-:isNodeFor rdf:type owl:ObjectProperty ;
-           <http://purl.org/dc/terms/contributor> <https://orcid.org/0000-0002-8824-9577> ;
-           <http://purl.org/dc/terms/created> "2024-08-14T21:51:02Z"^^xsd:dateTime .
-
-
 ###  http://www.semanticweb.org/mdebe/ontologies/2024/7/util/isParticipantOf
 :isParticipantOf rdf:type owl:ObjectProperty ;
-                 rdfs:domain :Agent ;
-                 rdfs:range :Proposition ;
                  <http://purl.org/dc/terms/contributor> <https://orcid.org/0000-0002-8824-9577> ;
                  <http://purl.org/dc/terms/created> "2024-08-02T21:35:33Z"^^xsd:dateTime .
 
@@ -319,13 +266,6 @@
                        <http://purl.org/dc/terms/created> "2024-08-12T22:53:27Z"^^xsd:dateTime .
 
 
-###  http://www.semanticweb.org/mdebe/ontologies/2024/7/util/isRootNodeFor
-:isRootNodeFor rdf:type owl:ObjectProperty ;
-               rdfs:subPropertyOf :isNodeFor ;
-               <http://purl.org/dc/terms/contributor> <https://orcid.org/0000-0002-8824-9577> ;
-               <http://purl.org/dc/terms/created> "2024-08-14T21:51:16Z"^^xsd:dateTime .
-
-
 ###  http://www.semanticweb.org/mdebe/ontologies/2024/7/util/isStrategyForProfile
 :isStrategyForProfile rdf:type owl:ObjectProperty ;
                       <http://purl.org/dc/terms/contributor> <https://orcid.org/0000-0002-8824-9577> ;
@@ -336,13 +276,6 @@
 :isSubPropositionOf rdf:type owl:ObjectProperty ;
                     <http://purl.org/dc/terms/contributor> <https://orcid.org/0000-0002-8824-9577> ;
                     <http://purl.org/dc/terms/created> "2024-08-02T18:11:34Z"^^xsd:dateTime .
-
-
-###  http://www.semanticweb.org/mdebe/ontologies/2024/7/util/isSubStateOf
-:isSubStateOf rdf:type owl:ObjectProperty ;
-              rdfs:subPropertyOf :isSubPropositionOf ;
-              <http://purl.org/dc/terms/contributor> <https://orcid.org/0000-0002-8824-9577> ;
-              <http://purl.org/dc/terms/created> "2024-08-15T00:10:46Z"^^xsd:dateTime .
 
 
 ###  http://www.semanticweb.org/mdebe/ontologies/2024/7/util/preferredState
@@ -447,8 +380,7 @@
 ###  http://www.semanticweb.org/mdebe/ontologies/2024/7/util/CausalObject
 :CausalObject rdf:type owl:Class ;
               <http://purl.org/dc/terms/contributor> <https://orcid.org/0000-0002-8824-9577> ;
-              <http://purl.org/dc/terms/created> "2024-08-02T21:32:57Z"^^xsd:dateTime ;
-              <http://www.w3.org/2004/02/skos/core#definition> "Causal object is a class to define the domain of things that happen in the world: Agents, Events, and States." .
+              <http://purl.org/dc/terms/created> "2024-08-02T21:32:57Z"^^xsd:dateTime .
 
 
 ###  http://www.semanticweb.org/mdebe/ontologies/2024/7/util/Choice
@@ -461,40 +393,6 @@
                         ] ;
         <http://purl.org/dc/terms/contributor> <https://orcid.org/0000-0002-8824-9577> ;
         <http://purl.org/dc/terms/created> "2024-08-02T18:42:39Z"^^xsd:dateTime .
-
-
-###  http://www.semanticweb.org/mdebe/ontologies/2024/7/util/CoinTossEvent
-:CoinTossEvent rdf:type owl:Class ;
-               owl:equivalentClass [ rdf:type owl:Restriction ;
-                                     owl:onProperty :hasPayoff ;
-                                     owl:hasValue :CoinTossLottery
-                                   ] ;
-               rdfs:subClassOf :Task ;
-               <http://purl.org/dc/terms/contributor> <https://orcid.org/0000-0002-8824-9577> ;
-               <http://purl.org/dc/terms/created> "2024-08-15T05:15:39Z"^^xsd:dateTime .
-
-
-###  http://www.semanticweb.org/mdebe/ontologies/2024/7/util/CoinTossGame
-:CoinTossGame rdf:type owl:Class ;
-              rdfs:subClassOf :RandomGame ,
-                              [ rdf:type owl:Restriction ;
-                                owl:onProperty :hasPlayer ;
-                                owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
-                                owl:onClass :Agent
-                              ] ;
-              <http://purl.org/dc/terms/contributor> <https://orcid.org/0000-0002-8824-9577> ;
-              <http://purl.org/dc/terms/created> "2024-08-15T05:11:56Z"^^xsd:dateTime .
-
-
-###  http://www.semanticweb.org/mdebe/ontologies/2024/7/util/CoinTossGameTree
-:CoinTossGameTree rdf:type owl:Class ;
-                  owl:equivalentClass [ rdf:type owl:Restriction ;
-                                        owl:onProperty :hasRootNode ;
-                                        owl:someValuesFrom :CoinTossEvent
-                                      ] ;
-                  rdfs:subClassOf :GameTree ;
-                  <http://purl.org/dc/terms/contributor> <https://orcid.org/0000-0002-8824-9577> ;
-                  <http://purl.org/dc/terms/created> "2024-08-15T05:16:25Z"^^xsd:dateTime .
 
 
 ###  http://www.semanticweb.org/mdebe/ontologies/2024/7/util/Confess
@@ -513,35 +411,17 @@
 
 ###  http://www.semanticweb.org/mdebe/ontologies/2024/7/util/Game
 :Game rdf:type owl:Class ;
+      rdfs:subClassOf :Task ;
       <http://purl.org/dc/terms/contributor> <https://orcid.org/0000-0002-8824-9577> ;
       <http://purl.org/dc/terms/created> "2024-08-08T22:35:41Z"^^xsd:dateTime .
 
 
 ###  http://www.semanticweb.org/mdebe/ontologies/2024/7/util/GameTree
 :GameTree rdf:type owl:Class ;
-          rdfs:subClassOf [ rdf:type owl:Restriction ;
-                            owl:onProperty :hasRootNode ;
-                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                            owl:onClass :GameTreeNode
-                          ] ;
+          rdfs:subClassOf :Event ;
           <http://purl.org/dc/terms/contributor> <https://orcid.org/0000-0002-8824-9577> ;
           <http://purl.org/dc/terms/created> "2024-08-13T17:34:22Z"^^xsd:dateTime ;
           rdfs:comment "GameTree is not a Task because it can have stochastic events that are attributed to Nature" .
-
-
-###  http://www.semanticweb.org/mdebe/ontologies/2024/7/util/GameTreeNode
-:GameTreeNode rdf:type owl:Class ;
-              <http://purl.org/dc/terms/contributor> <https://orcid.org/0000-0002-8824-9577> ;
-              <http://purl.org/dc/terms/created> "2024-08-14T21:41:06Z"^^xsd:dateTime .
-
-
-###  http://www.semanticweb.org/mdebe/ontologies/2024/7/util/InformationSet
-:InformationSet rdf:type owl:Class ;
-                <http://purl.org/dc/terms/contributor> <https://orcid.org/0000-0002-8824-9577> ;
-                <http://purl.org/dc/terms/created> "2024-08-14T22:04:57Z"^^xsd:dateTime ;
-                <http://www.w3.org/2004/02/skos/core#definition> """A player may know the exact node in the game tree when it is his turn to move, or he may know only that he is at one of several possible nodes. We call such a collection of nodes an information set. For a set of nodes to form an information set, the same player must be assigned to move at each of the nodes in the set and have the same array of possible actions at each node. We also require that if two nodes a and a′ are in the same information set for a player, the moves that player made up to a and a′ must be the same. This criterion is called perfect recall, because if a player never forgets his moves, he cannot make two different choices that subsequently land him in the same information set.3 A strategy si for player i is a choice of an action at every information set assigned to i.
-
-Gintis, Herbert. The Bounds of Reason: Game Theory and the Unification of the Behavioral Sciences - Revised Edition (p. 34). Princeton University Press. Kindle Edition.""" .
 
 
 ###  http://www.semanticweb.org/mdebe/ontologies/2024/7/util/IntentionalAgent
@@ -569,9 +449,7 @@ Gintis, Herbert. The Bounds of Reason: Game Theory and the Unification of the Be
                          ] ;
          <http://purl.org/dc/terms/contributor> <https://orcid.org/0000-0002-8824-9577> ;
          <http://purl.org/dc/terms/created> "2024-08-02T18:10:03Z"^^xsd:dateTime ;
-         <http://www.w3.org/2004/02/skos/core#definition> """Let Ω be a finite set of states of nature. We call any A ⊆ Ω an event. Let L be a set of lotteries, where a lottery is a function π : Ω → X that associates with each state of nature ω ∊ Ω a payoff π(ω) ∊ X. Note that this concept of a lottery does not include a probability distribution over the states of nature. Rather, the Savage axioms allow us to associate a subjective prior over each state of nature ω, expressing the decision maker’s personal assessment of the probability that ω will occur.
-
-Gintis, Herbert. The Bounds of Reason: Game Theory and the Unification of the Behavioral Sciences - Revised Edition (p. 14). Princeton University Press. Kindle Edition.""" .
+         rdfs:comment "Using the term \"lottery\" from Gintis. A state where only one of the sub-states will be the actual result. Each sub-state must have a probability and the probabilities must sum to 1." .
 
 
 ###  http://www.semanticweb.org/mdebe/ontologies/2024/7/util/NeverConfess
@@ -674,7 +552,8 @@ Gintis, Herbert. The Bounds of Reason: Game Theory and the Unification of the Be
                                            owl:onProperty :hasStrategyProfile ;
                                            owl:someValuesFrom :PrisonersDilemmaStrategyProfile
                                          ] ;
-                     rdfs:subClassOf :ZeroSumGame ;
+                     rdfs:subClassOf :Choice ,
+                                     :ZeroSumGame ;
                      <http://purl.org/dc/terms/contributor> <https://orcid.org/0000-0002-8824-9577> ;
                      <http://purl.org/dc/terms/created> "2024-08-08T22:06:59Z"^^xsd:dateTime .
 
@@ -703,7 +582,8 @@ Gintis, Herbert. The Bounds of Reason: Game Theory and the Unification of the Be
                                                                      ]
                                                                    )
                                                      ] ;
-                                 rdfs:subClassOf :StrategyProfile ;
+                                 rdfs:subClassOf :SingleMoveGame ,
+                                                 :StrategyProfile ;
                                  <http://purl.org/dc/terms/contributor> <https://orcid.org/0000-0002-8824-9577> ;
                                  <http://purl.org/dc/terms/created> "2024-08-13T14:40:12Z"^^xsd:dateTime .
 
@@ -712,16 +592,7 @@ Gintis, Herbert. The Bounds of Reason: Game Theory and the Unification of the Be
 :Proposition rdf:type owl:Class ;
              rdfs:subClassOf :CausalObject ;
              <http://purl.org/dc/terms/contributor> <https://orcid.org/0000-0002-8824-9577> ;
-             <http://purl.org/dc/terms/created> "2024-08-02T18:37:03Z"^^xsd:dateTime ;
-             rdfs:comment "There should be some term for this. I used \"proposition\" for historic reasons based on previous work" ;
-             <http://www.w3.org/2004/02/skos/core#definition> "A proposition  is an Event or State." .
-
-
-###  http://www.semanticweb.org/mdebe/ontologies/2024/7/util/RandomGame
-:RandomGame rdf:type owl:Class ;
-            rdfs:subClassOf :Game ;
-            <http://purl.org/dc/terms/contributor> <https://orcid.org/0000-0002-8824-9577> ;
-            <http://purl.org/dc/terms/created> "2024-08-15T05:11:24Z"^^xsd:dateTime .
+             <http://purl.org/dc/terms/created> "2024-08-02T18:37:03Z"^^xsd:dateTime .
 
 
 ###  http://www.semanticweb.org/mdebe/ontologies/2024/7/util/RiskAverseAgent
@@ -736,25 +607,6 @@ Gintis, Herbert. The Bounds of Reason: Game Theory and the Unification of the Be
                  rdfs:subClassOf :IntentionalAgent ;
                  <http://purl.org/dc/terms/contributor> <https://orcid.org/0000-0002-8824-9577> ;
                  <http://purl.org/dc/terms/created> "2024-08-08T21:48:28Z"^^xsd:dateTime .
-
-
-###  http://www.semanticweb.org/mdebe/ontologies/2024/7/util/RootNode
-:RootNode rdf:type owl:Class ;
-          owl:equivalentClass [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
-                                                       owl:onProperty :isRootNodeFor ;
-                                                       owl:someValuesFrom :GameTree
-                                                     ]
-                                                     [ rdf:type owl:Restriction ;
-                                                       owl:onProperty :hasSuperNode ;
-                                                       owl:maxQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
-                                                       owl:onClass :GameTreeNode
-                                                     ]
-                                                   ) ;
-                                rdf:type owl:Class
-                              ] ;
-          rdfs:subClassOf :GameTreeNode ;
-          <http://purl.org/dc/terms/contributor> <https://orcid.org/0000-0002-8824-9577> ;
-          <http://purl.org/dc/terms/created> "2024-08-14T21:50:12Z"^^xsd:dateTime .
 
 
 ###  http://www.semanticweb.org/mdebe/ontologies/2024/7/util/SingleMoveGame
@@ -789,10 +641,7 @@ Gintis, Herbert. The Bounds of Reason: Game Theory and the Unification of the Be
 :Strategy rdf:type owl:Class ;
           rdfs:subClassOf :Task ;
           <http://purl.org/dc/terms/contributor> <https://orcid.org/0000-0002-8824-9577> ;
-          <http://purl.org/dc/terms/created> "2024-08-08T22:44:35Z"^^xsd:dateTime ;
-          <http://www.w3.org/2004/02/skos/core#definition> """A strategy si for player i is a choice of an action at every information set assigned to i.
-
-Gintis, Herbert. The Bounds of Reason: Game Theory and the Unification of the Behavioral Sciences - Revised Edition (p. 34). Princeton University Press. Kindle Edition.""" .
+          <http://purl.org/dc/terms/created> "2024-08-08T22:44:35Z"^^xsd:dateTime .
 
 
 ###  http://www.semanticweb.org/mdebe/ontologies/2024/7/util/StrategyProfile
@@ -817,30 +666,6 @@ Gintis, Herbert. The Bounds of Reason: Game Theory and the Unification of the Be
       <http://purl.org/dc/terms/created> "2024-08-02T18:35:57Z"^^xsd:dateTime .
 
 
-###  http://www.semanticweb.org/mdebe/ontologies/2024/7/util/TerminalNode
-:TerminalNode rdf:type owl:Class ;
-              owl:equivalentClass [ rdf:type owl:Restriction ;
-                                    owl:onProperty :hasSubNode ;
-                                    owl:maxQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
-                                    owl:onClass :GameTreeNode
-                                  ] ;
-              rdfs:subClassOf :GameTreeNode ,
-                              [ rdf:type owl:Restriction ;
-                                owl:onProperty :hasSuperNode ;
-                                owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                owl:onClass :GameTreeNode
-                              ] ;
-              <http://purl.org/dc/terms/contributor> <https://orcid.org/0000-0002-8824-9577> ;
-              <http://purl.org/dc/terms/created> "2024-08-14T21:52:56Z"^^xsd:dateTime .
-
-
-###  http://www.semanticweb.org/mdebe/ontologies/2024/7/util/TitForTat
-:TitForTat rdf:type owl:Class ;
-           rdfs:subClassOf :Strategy ;
-           <http://purl.org/dc/terms/contributor> <https://orcid.org/0000-0002-8824-9577> ;
-           <http://purl.org/dc/terms/created> "2024-08-14T23:50:35Z"^^xsd:dateTime .
-
-
 ###  http://www.semanticweb.org/mdebe/ontologies/2024/7/util/ZeroSumGame
 :ZeroSumGame rdf:type owl:Class ;
              rdfs:subClassOf :Game ,
@@ -857,13 +682,13 @@ Gintis, Herbert. The Bounds of Reason: Game Theory and the Unification of the Be
 #    Individuals
 #################################################################
 
-###  http://www.semanticweb.org/mdebe/ontologies/2024/7/util/CoinTossLottery
-:CoinTossLottery rdf:type owl:NamedIndividual ,
-                          :Lottery ;
-                 :hasSubState :Heads ,
-                              :Tails ;
-                 <http://purl.org/dc/terms/contributor> <https://orcid.org/0000-0002-8824-9577> ;
-                 <http://purl.org/dc/terms/created> "2024-08-08T21:26:20Z"^^xsd:dateTime .
+###  http://www.semanticweb.org/mdebe/ontologies/2024/7/util/CoinTossResult
+:CoinTossResult rdf:type owl:NamedIndividual ,
+                         :Lottery ;
+                :hasSubState :Heads ,
+                             :Tails ;
+                <http://purl.org/dc/terms/contributor> <https://orcid.org/0000-0002-8824-9577> ;
+                <http://purl.org/dc/terms/created> "2024-08-08T21:26:20Z"^^xsd:dateTime .
 
 
 ###  http://www.semanticweb.org/mdebe/ontologies/2024/7/util/DontSpinSlotMachine
@@ -879,6 +704,7 @@ Gintis, Herbert. The Bounds of Reason: Game Theory and the Unification of the Be
 :Heads rdf:type owl:NamedIndividual ,
                 :State ;
        :probability 0.5 ;
+       :utility 1.0 ;
        <http://purl.org/dc/terms/contributor> <https://orcid.org/0000-0002-8824-9577> ;
        <http://purl.org/dc/terms/created> "2024-08-08T21:26:57Z"^^xsd:dateTime .
 
@@ -992,6 +818,7 @@ Gintis, Herbert. The Bounds of Reason: Game Theory and the Unification of the Be
 :Tails rdf:type owl:NamedIndividual ,
                 :State ;
        :probability .5 ;
+       :utility 0.00001 ;
        <http://purl.org/dc/terms/contributor> <https://orcid.org/0000-0002-8824-9577> ;
        <http://purl.org/dc/terms/created> "2024-08-08T21:27:05Z"^^xsd:dateTime .
 

@@ -1,0 +1,279 @@
+prefix dc: <http://purl.org/dc/elements/1.1/>
+prefix dcterms: <http://purl.org/dc/terms/>
+prefix err: <http://www.w3.org/2005/xqt-errors#>
+prefix fn: <http://www.w3.org/2005/xpath-functions#>
+prefix foaf: <http://xmlns.com/foaf/0.1/>
+prefix fti: <http://franz.com/ns/allegrograph/2.2/textindex/>
+prefix keyword: <http://franz.com/ns/keyword#>
+prefix kw: <http://franz.com/ns/keyword#>
+prefix nd: <http://franz.com/ns/allegrograph/5.0/geo/nd#>
+prefix ndfn: <http://franz.com/ns/allegrograph/5.0/geo/nd/fn#>
+prefix owl: <http://www.w3.org/2002/07/owl#>
+prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix skos: <http://www.w3.org/2004/02/skos/core#>
+prefix xs: <http://www.w3.org/2001/XMLSchema#>
+prefix xsd: <http://www.w3.org/2001/XMLSchema#>
+<http://www.semanticweb.org/mdebe/ontologies/2024/7/util> rdf:type owl:Ontology . 
+dcterms:contributor rdf:type owl:AnnotationProperty . 
+dcterms:created rdf:type owl:AnnotationProperty . 
+<http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> rdf:type owl:AnnotationProperty . 
+<http://www.semanticweb.org/mdebe/ontologies/2024/7/util/hasCause> rdf:type owl:ObjectProperty ; 
+  owl:inverseOf <http://www.semanticweb.org/mdebe/ontologies/2024/7/util/isCauseOf> ; 
+  rdfs:domain <http://www.semanticweb.org/mdebe/ontologies/2024/7/util/Proposition> ; 
+  rdfs:range <http://www.semanticweb.org/mdebe/ontologies/2024/7/util/CausalObject> ; 
+  dcterms:contributor <https://orcid.org/0000-0002-8824-9577> ; 
+  dcterms:created "2024-08-02T18:36:15Z"^^xsd:dateTime . 
+<http://www.semanticweb.org/mdebe/ontologies/2024/7/util/hasGreaterProbabilityThan> rdf:type owl:ObjectProperty ; 
+  owl:inverseOf <http://www.semanticweb.org/mdebe/ontologies/2024/7/util/hasLesserProbabilityThan> ; 
+  rdf:type owl:TransitiveProperty ; 
+  dcterms:contributor <https://orcid.org/0000-0002-8824-9577> ; 
+  dcterms:created "2024-08-02T18:23:57Z"^^xsd:dateTime . 
+<http://www.semanticweb.org/mdebe/ontologies/2024/7/util/hasLesserProbabilityThan> rdf:type owl:ObjectProperty, owl:TransitiveProperty ; 
+  dcterms:contributor <https://orcid.org/0000-0002-8824-9577> ; 
+  dcterms:created "2024-08-02T18:24:13Z"^^xsd:dateTime . 
+<http://www.semanticweb.org/mdebe/ontologies/2024/7/util/hasParticipant> rdf:type owl:ObjectProperty ; 
+  owl:inverseOf <http://www.semanticweb.org/mdebe/ontologies/2024/7/util/isParticipantOf> ; 
+  rdfs:domain <http://www.semanticweb.org/mdebe/ontologies/2024/7/util/Proposition> ; 
+  rdfs:range <http://www.semanticweb.org/mdebe/ontologies/2024/7/util/Agent> ; 
+  dcterms:contributor <https://orcid.org/0000-0002-8824-9577> ; 
+  dcterms:created "2024-08-02T21:35:00Z"^^xsd:dateTime . 
+<http://www.semanticweb.org/mdebe/ontologies/2024/7/util/hasPostCondition> rdf:type owl:ObjectProperty ; 
+  rdfs:domain <http://www.semanticweb.org/mdebe/ontologies/2024/7/util/Event> ; 
+  rdfs:range <http://www.semanticweb.org/mdebe/ontologies/2024/7/util/State> ; 
+  dcterms:contributor <https://orcid.org/0000-0002-8824-9577> ; 
+  dcterms:created "2024-08-02T18:43:27Z"^^xsd:dateTime . 
+<http://www.semanticweb.org/mdebe/ontologies/2024/7/util/hasPreCondition> rdf:type owl:ObjectProperty ; 
+  rdfs:domain <http://www.semanticweb.org/mdebe/ontologies/2024/7/util/Event> ; 
+  rdfs:range <http://www.semanticweb.org/mdebe/ontologies/2024/7/util/State> ; 
+  dcterms:contributor <https://orcid.org/0000-0002-8824-9577> ; 
+  dcterms:created "2024-08-02T18:43:27Z"^^xsd:dateTime . 
+<http://www.semanticweb.org/mdebe/ontologies/2024/7/util/hasSubProposition> rdf:type owl:ObjectProperty ; 
+  owl:inverseOf <http://www.semanticweb.org/mdebe/ontologies/2024/7/util/isSubPropositionOf> ; 
+  rdfs:domain <http://www.semanticweb.org/mdebe/ontologies/2024/7/util/Proposition> ; 
+  rdfs:range <http://www.semanticweb.org/mdebe/ontologies/2024/7/util/Proposition> ; 
+  dcterms:contributor <https://orcid.org/0000-0002-8824-9577> ; 
+  dcterms:created "2024-08-02T18:11:25Z"^^xsd:dateTime . 
+<http://www.semanticweb.org/mdebe/ontologies/2024/7/util/isCauseOf> rdf:type owl:ObjectProperty ; 
+  dcterms:contributor <https://orcid.org/0000-0002-8824-9577> ; 
+  dcterms:created "2024-08-02T21:34:33Z"^^xsd:dateTime . 
+<http://www.semanticweb.org/mdebe/ontologies/2024/7/util/isParticipantOf> rdf:type owl:ObjectProperty ; 
+  dcterms:contributor <https://orcid.org/0000-0002-8824-9577> ; 
+  dcterms:created "2024-08-02T21:35:33Z"^^xsd:dateTime . 
+<http://www.semanticweb.org/mdebe/ontologies/2024/7/util/isSubPropositionOf> rdf:type owl:ObjectProperty ; 
+  dcterms:contributor <https://orcid.org/0000-0002-8824-9577> ; 
+  dcterms:created "2024-08-02T18:11:34Z"^^xsd:dateTime . 
+<http://www.semanticweb.org/mdebe/ontologies/2024/7/util/rationalDecision> rdf:type owl:ObjectProperty ; 
+  rdfs:domain <http://www.semanticweb.org/mdebe/ontologies/2024/7/util/Choice> ; 
+  rdfs:range <http://www.semanticweb.org/mdebe/ontologies/2024/7/util/Task> ; 
+  dcterms:contributor <https://orcid.org/0000-0002-8824-9577> ; 
+  dcterms:created "2024-08-02T18:50:10Z"^^xsd:dateTime . 
+<http://www.semanticweb.org/mdebe/ontologies/2024/7/util/responsibleAgent> rdf:type owl:ObjectProperty ; 
+  rdfs:subPropertyOf <http://www.semanticweb.org/mdebe/ontologies/2024/7/util/hasCause>, <http://www.semanticweb.org/mdebe/ontologies/2024/7/util/hasParticipant> ; 
+  dcterms:contributor <https://orcid.org/0000-0002-8824-9577> ; 
+  dcterms:created "2024-08-02T21:36:06Z"^^xsd:dateTime . 
+<http://www.semanticweb.org/mdebe/ontologies/2024/7/util/baseUtility> rdf:type owl:DatatypeProperty, owl:FunctionalProperty ; 
+  rdfs:range xsd:decimal ; 
+  dcterms:contributor <https://orcid.org/0000-0002-8824-9577> ; 
+  dcterms:created "2024-08-02T18:12:56Z"^^xsd:dateTime . 
+<http://www.semanticweb.org/mdebe/ontologies/2024/7/util/expectedValue> rdf:type owl:DatatypeProperty ; 
+  rdfs:range xsd:decimal ; 
+  dcterms:contributor <https://orcid.org/0000-0002-8824-9577> ; 
+  dcterms:created "2024-08-02T18:55:49Z"^^xsd:dateTime . 
+<http://www.semanticweb.org/mdebe/ontologies/2024/7/util/probability> rdf:type owl:DatatypeProperty, owl:FunctionalProperty ; 
+  rdfs:range xsd:decimal ; 
+  dcterms:contributor <https://orcid.org/0000-0002-8824-9577> ; 
+  dcterms:created "2024-08-02T18:12:56Z"^^xsd:dateTime . 
+<http://www.semanticweb.org/mdebe/ontologies/2024/7/util/utility> rdf:type owl:DatatypeProperty ; 
+  rdfs:range xsd:decimal ; 
+  dcterms:contributor <https://orcid.org/0000-0002-8824-9577> ; 
+  dcterms:created "2024-08-02T18:30:04Z"^^xsd:dateTime . 
+<http://www.semanticweb.org/mdebe/ontologies/2024/7/util/Agent> rdf:type owl:Class ; 
+  rdfs:subClassOf <http://www.semanticweb.org/mdebe/ontologies/2024/7/util/CausalObject> ; 
+  dcterms:contributor <https://orcid.org/0000-0002-8824-9577> ; 
+  dcterms:created "2024-08-02T18:09:29Z"^^xsd:dateTime . 
+<http://www.semanticweb.org/mdebe/ontologies/2024/7/util/CausalObject> rdf:type owl:Class ; 
+  dcterms:contributor <https://orcid.org/0000-0002-8824-9577> ; 
+  dcterms:created "2024-08-02T21:32:57Z"^^xsd:dateTime . 
+<http://www.semanticweb.org/mdebe/ontologies/2024/7/util/Choice> rdf:type owl:Class ; 
+  rdfs:subClassOf <http://www.semanticweb.org/mdebe/ontologies/2024/7/util/Task> . 
+_:b2D5C4430x1 rdf:type owl:Restriction ; 
+  owl:onProperty <http://www.semanticweb.org/mdebe/ontologies/2024/7/util/hasSubProposition> ; 
+  owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ; 
+  owl:onClass <http://www.semanticweb.org/mdebe/ontologies/2024/7/util/Task> . 
+<http://www.semanticweb.org/mdebe/ontologies/2024/7/util/Choice> rdfs:subClassOf _:b2D5C4430x1 ; 
+  dcterms:contributor <https://orcid.org/0000-0002-8824-9577> ; 
+  dcterms:created "2024-08-02T18:42:39Z"^^xsd:dateTime . 
+<http://www.semanticweb.org/mdebe/ontologies/2024/7/util/Event> rdf:type owl:Class ; 
+  rdfs:subClassOf <http://www.semanticweb.org/mdebe/ontologies/2024/7/util/Proposition> ; 
+  dcterms:contributor <https://orcid.org/0000-0002-8824-9577> ; 
+  dcterms:created "2024-08-02T18:35:42Z"^^xsd:dateTime . 
+<http://www.semanticweb.org/mdebe/ontologies/2024/7/util/OrState> rdf:type owl:Class . 
+_:b2D5C4430x2 rdf:type owl:Restriction ; 
+  owl:onProperty <http://www.semanticweb.org/mdebe/ontologies/2024/7/util/hasSubProposition> ; 
+  owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ; 
+  owl:onClass <http://www.semanticweb.org/mdebe/ontologies/2024/7/util/State> . 
+<http://www.semanticweb.org/mdebe/ontologies/2024/7/util/OrState> owl:equivalentClass _:b2D5C4430x2 ; 
+  rdfs:subClassOf <http://www.semanticweb.org/mdebe/ontologies/2024/7/util/State> ; 
+  dcterms:contributor <https://orcid.org/0000-0002-8824-9577> ; 
+  dcterms:created "2024-08-02T18:10:03Z"^^xsd:dateTime ; 
+  rdfs:comment "A state where only one of the sub-states will be the actual result. Each sub-state must have a probability and the probabilities must sum to 1." . 
+<http://www.semanticweb.org/mdebe/ontologies/2024/7/util/Proposition> rdf:type owl:Class ; 
+  rdfs:subClassOf <http://www.semanticweb.org/mdebe/ontologies/2024/7/util/CausalObject> ; 
+  dcterms:contributor <https://orcid.org/0000-0002-8824-9577> ; 
+  dcterms:created "2024-08-02T18:37:03Z"^^xsd:dateTime . 
+<http://www.semanticweb.org/mdebe/ontologies/2024/7/util/State> rdf:type owl:Class ; 
+  rdfs:subClassOf <http://www.semanticweb.org/mdebe/ontologies/2024/7/util/Proposition> ; 
+  dcterms:contributor <https://orcid.org/0000-0002-8824-9577> ; 
+  dcterms:created "2024-08-02T18:09:49Z"^^xsd:dateTime . 
+<http://www.semanticweb.org/mdebe/ontologies/2024/7/util/Task> rdf:type owl:Class . 
+_:b2D5C4430x4 rdf:first <http://www.semanticweb.org/mdebe/ontologies/2024/7/util/Event> . 
+_:b2D5C4430x6 rdf:type owl:Restriction ; 
+  owl:onProperty <http://www.semanticweb.org/mdebe/ontologies/2024/7/util/hasCause> ; 
+  owl:someValuesFrom <http://www.semanticweb.org/mdebe/ontologies/2024/7/util/Agent> . 
+_:b2D5C4430x5 rdf:first _:b2D5C4430x6 . 
+_:b2D5C4430x4 rdf:rest _:b2D5C4430x5 . 
+_:b2D5C4430x5 rdf:rest rdf:nil . 
+_:b2D5C4430x3 owl:intersectionOf _:b2D5C4430x4 ; 
+  rdf:type owl:Class . 
+<http://www.semanticweb.org/mdebe/ontologies/2024/7/util/Task> owl:equivalentClass _:b2D5C4430x3 ; 
+  rdfs:subClassOf <http://www.semanticweb.org/mdebe/ontologies/2024/7/util/Event> ; 
+  dcterms:contributor <https://orcid.org/0000-0002-8824-9577> ; 
+  dcterms:created "2024-08-02T18:35:57Z"^^xsd:dateTime . 
+<http://www.semanticweb.org/mdebe/ontologies/2024/7/util/DontSpinSlotMachine> rdf:type owl:NamedIndividual, <http://www.semanticweb.org/mdebe/ontologies/2024/7/util/CausalObject>, <http://www.semanticweb.org/mdebe/ontologies/2024/7/util/Event>, <http://www.semanticweb.org/mdebe/ontologies/2024/7/util/Proposition>, <http://www.semanticweb.org/mdebe/ontologies/2024/7/util/Task> ; 
+  <http://www.semanticweb.org/mdebe/ontologies/2024/7/util/isSubPropositionOf> <http://www.semanticweb.org/mdebe/ontologies/2024/7/util/SpinSlotMachineChoice> ; 
+  <http://www.semanticweb.org/mdebe/ontologies/2024/7/util/baseUtility> 0 ; 
+  <http://www.semanticweb.org/mdebe/ontologies/2024/7/util/probability> 1 ; 
+  <http://www.semanticweb.org/mdebe/ontologies/2024/7/util/utility> 0 ; 
+  dcterms:contributor <https://orcid.org/0000-0002-8824-9577> ; 
+  dcterms:created "2024-08-02T18:47:48Z"^^xsd:dateTime . 
+<http://www.semanticweb.org/mdebe/ontologies/2024/7/util/SlotMachinePaysOff> rdf:type owl:NamedIndividual, <http://www.semanticweb.org/mdebe/ontologies/2024/7/util/CausalObject>, <http://www.semanticweb.org/mdebe/ontologies/2024/7/util/Proposition>, <http://www.semanticweb.org/mdebe/ontologies/2024/7/util/State> ; 
+  <http://www.semanticweb.org/mdebe/ontologies/2024/7/util/hasLesserProbabilityThan> <http://www.semanticweb.org/mdebe/ontologies/2024/7/util/SlotMachineReturnsNothing> ; 
+  <http://www.semanticweb.org/mdebe/ontologies/2024/7/util/isSubPropositionOf> <http://www.semanticweb.org/mdebe/ontologies/2024/7/util/SlotMachineResult> ; 
+  <http://www.semanticweb.org/mdebe/ontologies/2024/7/util/baseUtility> 1000 ; 
+  <http://www.semanticweb.org/mdebe/ontologies/2024/7/util/probability> 0.0001 ; 
+  <http://www.semanticweb.org/mdebe/ontologies/2024/7/util/utility> 0.1 ; 
+  dcterms:contributor <https://orcid.org/0000-0002-8824-9577> ; 
+  dcterms:created "2024-08-02T18:15:43Z"^^xsd:dateTime . 
+<http://www.semanticweb.org/mdebe/ontologies/2024/7/util/SlotMachineResult> rdf:type owl:NamedIndividual, <http://www.semanticweb.org/mdebe/ontologies/2024/7/util/CausalObject>, <http://www.semanticweb.org/mdebe/ontologies/2024/7/util/OrState>, <http://www.semanticweb.org/mdebe/ontologies/2024/7/util/Proposition>, <http://www.semanticweb.org/mdebe/ontologies/2024/7/util/State> ; 
+  <http://www.semanticweb.org/mdebe/ontologies/2024/7/util/hasSubProposition> <http://www.semanticweb.org/mdebe/ontologies/2024/7/util/SlotMachinePaysOff>, <http://www.semanticweb.org/mdebe/ontologies/2024/7/util/SlotMachineReturnsNothing> ; 
+  dcterms:contributor <https://orcid.org/0000-0002-8824-9577> ; 
+  dcterms:created "2024-08-02T18:48:26Z"^^xsd:dateTime . 
+<http://www.semanticweb.org/mdebe/ontologies/2024/7/util/SlotMachineReturnsNothing> rdf:type owl:NamedIndividual, <http://www.semanticweb.org/mdebe/ontologies/2024/7/util/CausalObject>, <http://www.semanticweb.org/mdebe/ontologies/2024/7/util/Proposition>, <http://www.semanticweb.org/mdebe/ontologies/2024/7/util/State> ; 
+  <http://www.semanticweb.org/mdebe/ontologies/2024/7/util/hasGreaterProbabilityThan> <http://www.semanticweb.org/mdebe/ontologies/2024/7/util/SlotMachinePaysOff> ; 
+  <http://www.semanticweb.org/mdebe/ontologies/2024/7/util/isSubPropositionOf> <http://www.semanticweb.org/mdebe/ontologies/2024/7/util/SlotMachineResult> ; 
+  <http://www.semanticweb.org/mdebe/ontologies/2024/7/util/baseUtility> -25.0 ; 
+  <http://www.semanticweb.org/mdebe/ontologies/2024/7/util/probability> 0.9999 ; 
+  <http://www.semanticweb.org/mdebe/ontologies/2024/7/util/utility> -24.9975 ; 
+  dcterms:contributor <https://orcid.org/0000-0002-8824-9577> ; 
+  dcterms:created "2024-08-02T18:15:54Z"^^xsd:dateTime . 
+<http://www.semanticweb.org/mdebe/ontologies/2024/7/util/SpinSlotMachine> rdf:type owl:NamedIndividual, <http://www.semanticweb.org/mdebe/ontologies/2024/7/util/CausalObject>, <http://www.semanticweb.org/mdebe/ontologies/2024/7/util/Event>, <http://www.semanticweb.org/mdebe/ontologies/2024/7/util/Proposition>, <http://www.semanticweb.org/mdebe/ontologies/2024/7/util/Task> ; 
+  <http://www.semanticweb.org/mdebe/ontologies/2024/7/util/hasPostCondition> <http://www.semanticweb.org/mdebe/ontologies/2024/7/util/SlotMachineResult> ; 
+  <http://www.semanticweb.org/mdebe/ontologies/2024/7/util/isSubPropositionOf> <http://www.semanticweb.org/mdebe/ontologies/2024/7/util/SpinSlotMachineChoice> ; 
+  dcterms:contributor <https://orcid.org/0000-0002-8824-9577> ; 
+  dcterms:created "2024-08-02T18:47:36Z"^^xsd:dateTime . 
+<http://www.semanticweb.org/mdebe/ontologies/2024/7/util/SpinSlotMachineChoice> rdf:type owl:NamedIndividual, <http://www.semanticweb.org/mdebe/ontologies/2024/7/util/CausalObject>, <http://www.semanticweb.org/mdebe/ontologies/2024/7/util/Choice>, <http://www.semanticweb.org/mdebe/ontologies/2024/7/util/Event>, <http://www.semanticweb.org/mdebe/ontologies/2024/7/util/Proposition>, <http://www.semanticweb.org/mdebe/ontologies/2024/7/util/Task> ; 
+  <http://www.semanticweb.org/mdebe/ontologies/2024/7/util/hasSubProposition> <http://www.semanticweb.org/mdebe/ontologies/2024/7/util/DontSpinSlotMachine>, <http://www.semanticweb.org/mdebe/ontologies/2024/7/util/SpinSlotMachine> ; 
+  dcterms:contributor <https://orcid.org/0000-0002-8824-9577> ; 
+  dcterms:created "2024-08-02T18:46:09Z"^^xsd:dateTime . 
+<http://www.semanticweb.org/mdebe/ontologies/2024/7/util/preferredState> dcterms:contributor <https://orcid.org/0000-0002-8824-9577> ; 
+  dcterms:created "2024-08-02T18:53:03Z"^^xsd:dateTime . 
+<http://www.semanticweb.org/mdebe/ontologies/2024/7/util/p1> rdf:type <http://www.w3.org/2003/11/swrl#Variable> . 
+<http://www.semanticweb.org/mdebe/ontologies/2024/7/util/p2> rdf:type <http://www.w3.org/2003/11/swrl#Variable> . 
+<http://www.semanticweb.org/mdebe/ontologies/2024/7/util/s> rdf:type <http://www.w3.org/2003/11/swrl#Variable> . 
+<http://www.semanticweb.org/mdebe/ontologies/2024/7/util/s1> rdf:type <http://www.w3.org/2003/11/swrl#Variable> . 
+<http://www.semanticweb.org/mdebe/ontologies/2024/7/util/s2> rdf:type <http://www.w3.org/2003/11/swrl#Variable> . 
+<http://www.semanticweb.org/mdebe/ontologies/2024/7/util/p> rdf:type <http://www.w3.org/2003/11/swrl#Variable> . 
+<http://www.semanticweb.org/mdebe/ontologies/2024/7/util/bu> rdf:type <http://www.w3.org/2003/11/swrl#Variable> . 
+<http://www.semanticweb.org/mdebe/ontologies/2024/7/util/u> rdf:type <http://www.w3.org/2003/11/swrl#Variable> . 
+_:b2D5C4430x8 <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ; 
+  rdfs:comment "Multiplies the baseUtility times the probability" ; 
+  rdfs:label "Compute Gintis Utility" ; 
+  rdf:type <http://www.w3.org/2003/11/swrl#Imp> . 
+_:b2D5C4430x9 rdf:type <http://www.w3.org/2003/11/swrl#AtomList> . 
+_:b2D5C4430x10 rdf:type <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> ; 
+  <http://www.w3.org/2003/11/swrl#propertyPredicate> <http://www.semanticweb.org/mdebe/ontologies/2024/7/util/probability> ; 
+  <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/mdebe/ontologies/2024/7/util/s> ; 
+  <http://www.w3.org/2003/11/swrl#argument2> <http://www.semanticweb.org/mdebe/ontologies/2024/7/util/p> . 
+_:b2D5C4430x9 rdf:first _:b2D5C4430x10 . 
+_:b2D5C4430x11 rdf:type <http://www.w3.org/2003/11/swrl#AtomList> . 
+_:b2D5C4430x12 rdf:type <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> ; 
+  <http://www.w3.org/2003/11/swrl#propertyPredicate> <http://www.semanticweb.org/mdebe/ontologies/2024/7/util/baseUtility> ; 
+  <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/mdebe/ontologies/2024/7/util/s> ; 
+  <http://www.w3.org/2003/11/swrl#argument2> <http://www.semanticweb.org/mdebe/ontologies/2024/7/util/bu> . 
+_:b2D5C4430x11 rdf:first _:b2D5C4430x12 . 
+_:b2D5C4430x13 rdf:type <http://www.w3.org/2003/11/swrl#AtomList> . 
+_:b2D5C4430x14 rdf:type <http://www.w3.org/2003/11/swrl#BuiltinAtom> ; 
+  <http://www.w3.org/2003/11/swrl#builtin> <http://www.w3.org/2003/11/swrlb#multiply> . 
+_:b2D5C4430x15 rdf:first <http://www.semanticweb.org/mdebe/ontologies/2024/7/util/u> . 
+_:b2D5C4430x16 rdf:first <http://www.semanticweb.org/mdebe/ontologies/2024/7/util/p> . 
+_:b2D5C4430x15 rdf:rest _:b2D5C4430x16 . 
+_:b2D5C4430x17 rdf:first <http://www.semanticweb.org/mdebe/ontologies/2024/7/util/bu> . 
+_:b2D5C4430x16 rdf:rest _:b2D5C4430x17 . 
+_:b2D5C4430x17 rdf:rest rdf:nil . 
+_:b2D5C4430x14 <http://www.w3.org/2003/11/swrl#arguments> _:b2D5C4430x15 . 
+_:b2D5C4430x13 rdf:first _:b2D5C4430x14 ; 
+  rdf:rest rdf:nil . 
+_:b2D5C4430x11 rdf:rest _:b2D5C4430x13 . 
+_:b2D5C4430x9 rdf:rest _:b2D5C4430x11 . 
+_:b2D5C4430x8 <http://www.w3.org/2003/11/swrl#body> _:b2D5C4430x9 . 
+_:b2D5C4430x19 rdf:type <http://www.w3.org/2003/11/swrl#AtomList> . 
+_:b2D5C4430x20 rdf:type <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> ; 
+  <http://www.w3.org/2003/11/swrl#propertyPredicate> <http://www.semanticweb.org/mdebe/ontologies/2024/7/util/utility> ; 
+  <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/mdebe/ontologies/2024/7/util/s> ; 
+  <http://www.w3.org/2003/11/swrl#argument2> <http://www.semanticweb.org/mdebe/ontologies/2024/7/util/u> . 
+_:b2D5C4430x19 rdf:first _:b2D5C4430x20 ; 
+  rdf:rest rdf:nil . 
+_:b2D5C4430x8 <http://www.w3.org/2003/11/swrl#head> _:b2D5C4430x19 . 
+_:b2D5C4430x21 <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ; 
+  rdfs:comment "" ; 
+  rdfs:label "Compute Probability Order" ; 
+  rdf:type <http://www.w3.org/2003/11/swrl#Imp> . 
+_:b2D5C4430x22 rdf:type <http://www.w3.org/2003/11/swrl#AtomList> . 
+_:b2D5C4430x23 rdf:type <http://www.w3.org/2003/11/swrl#BuiltinAtom> ; 
+  <http://www.w3.org/2003/11/swrl#builtin> <http://www.w3.org/2003/11/swrlb#greaterThan> . 
+_:b2D5C4430x24 rdf:first <http://www.semanticweb.org/mdebe/ontologies/2024/7/util/p1> . 
+_:b2D5C4430x25 rdf:first <http://www.semanticweb.org/mdebe/ontologies/2024/7/util/p2> . 
+_:b2D5C4430x24 rdf:rest _:b2D5C4430x25 . 
+_:b2D5C4430x25 rdf:rest rdf:nil . 
+_:b2D5C4430x23 <http://www.w3.org/2003/11/swrl#arguments> _:b2D5C4430x24 . 
+_:b2D5C4430x22 rdf:first _:b2D5C4430x23 . 
+_:b2D5C4430x27 rdf:type <http://www.w3.org/2003/11/swrl#AtomList> . 
+_:b2D5C4430x28 rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ; 
+  <http://www.w3.org/2003/11/swrl#propertyPredicate> <http://www.semanticweb.org/mdebe/ontologies/2024/7/util/hasSubProposition> ; 
+  <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/mdebe/ontologies/2024/7/util/s> ; 
+  <http://www.w3.org/2003/11/swrl#argument2> <http://www.semanticweb.org/mdebe/ontologies/2024/7/util/s1> . 
+_:b2D5C4430x27 rdf:first _:b2D5C4430x28 . 
+_:b2D5C4430x29 rdf:type <http://www.w3.org/2003/11/swrl#AtomList> . 
+_:b2D5C4430x30 rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ; 
+  <http://www.w3.org/2003/11/swrl#propertyPredicate> <http://www.semanticweb.org/mdebe/ontologies/2024/7/util/hasSubProposition> ; 
+  <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/mdebe/ontologies/2024/7/util/s> ; 
+  <http://www.w3.org/2003/11/swrl#argument2> <http://www.semanticweb.org/mdebe/ontologies/2024/7/util/s2> . 
+_:b2D5C4430x29 rdf:first _:b2D5C4430x30 . 
+_:b2D5C4430x31 rdf:type <http://www.w3.org/2003/11/swrl#AtomList> . 
+_:b2D5C4430x32 rdf:type <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> ; 
+  <http://www.w3.org/2003/11/swrl#propertyPredicate> <http://www.semanticweb.org/mdebe/ontologies/2024/7/util/probability> ; 
+  <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/mdebe/ontologies/2024/7/util/s1> ; 
+  <http://www.w3.org/2003/11/swrl#argument2> <http://www.semanticweb.org/mdebe/ontologies/2024/7/util/p1> . 
+_:b2D5C4430x31 rdf:first _:b2D5C4430x32 . 
+_:b2D5C4430x33 rdf:type <http://www.w3.org/2003/11/swrl#AtomList> . 
+_:b2D5C4430x34 rdf:type <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> ; 
+  <http://www.w3.org/2003/11/swrl#propertyPredicate> <http://www.semanticweb.org/mdebe/ontologies/2024/7/util/probability> ; 
+  <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/mdebe/ontologies/2024/7/util/s2> ; 
+  <http://www.w3.org/2003/11/swrl#argument2> <http://www.semanticweb.org/mdebe/ontologies/2024/7/util/p2> . 
+_:b2D5C4430x33 rdf:first _:b2D5C4430x34 ; 
+  rdf:rest rdf:nil . 
+_:b2D5C4430x31 rdf:rest _:b2D5C4430x33 . 
+_:b2D5C4430x29 rdf:rest _:b2D5C4430x31 . 
+_:b2D5C4430x27 rdf:rest _:b2D5C4430x29 . 
+_:b2D5C4430x22 rdf:rest _:b2D5C4430x27 . 
+_:b2D5C4430x21 <http://www.w3.org/2003/11/swrl#body> _:b2D5C4430x22 . 
+_:b2D5C4430x35 rdf:type <http://www.w3.org/2003/11/swrl#AtomList> . 
+_:b2D5C4430x36 rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ; 
+  <http://www.w3.org/2003/11/swrl#propertyPredicate> <http://www.semanticweb.org/mdebe/ontologies/2024/7/util/hasGreaterProbabilityThan> ; 
+  <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/mdebe/ontologies/2024/7/util/s1> ; 
+  <http://www.w3.org/2003/11/swrl#argument2> <http://www.semanticweb.org/mdebe/ontologies/2024/7/util/s2> . 
+_:b2D5C4430x35 rdf:first _:b2D5C4430x36 ; 
+  rdf:rest rdf:nil . 
+_:b2D5C4430x21 <http://www.w3.org/2003/11/swrl#head> _:b2D5C4430x35 . 
+<http://www.semanticweb.org/mdebe/ontologies/2024/7/util/SlotMachineResult> <http://www.semanticweb.org/mdebe/ontologies/2024/7/util/preferredState> <http://www.semanticweb.org/mdebe/ontologies/2024/7/util/SlotMachinePaysOff> . 
